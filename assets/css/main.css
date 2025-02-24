@@ -1,0 +1,18 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+:root {
+--main-bg-color: #D9D9D9;
+--main-text-color: #284B63;
+}
+
+body {
+  margin: 2vw;
+  padding: 0;
+  background: var(--main-bg-color);
+  color: var(--main-text-color);
+  font-family: "Lucida Console", Courier, monospace;
+}
