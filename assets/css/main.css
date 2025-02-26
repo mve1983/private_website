@@ -15,4 +15,5 @@ body {
   background: var(--main-bg-color);
   color: var(--main-text-color);
   font-family: "Lucida Console", Courier, monospace;
+  font-size: clamp(1rem, 1vw, 1.5rem);
 }
