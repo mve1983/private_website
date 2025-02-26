@@ -5,4 +5,4 @@
   <p>about private</p>
 </template>
 
-<style lang="css"></style>
+<style lang="css" scoped></style>

@@ -9,12 +9,14 @@
         <nav>
           <NuxtLink to="/"><button>Home</button></NuxtLink>
           <NuxtLink to="/aboutjob"><button>Berufliches</button></NuxtLink>
-          <NuxtLink to="/aboutprivate"><button>Privates</button></NuxtLink>
           <NuxtLink to="/code"><button>Code</button></NuxtLink>
+          <NuxtLink to="/aboutprivate"><button>Privates</button></NuxtLink>
+          <NuxtLink to="/contact"><button>Kontakt</button></NuxtLink>
         </nav>
       </div>
     </div>
   </header>
+  <hr>
 </template>
 
 <style lang="css" scoped>
@@ -36,18 +38,15 @@ button:active {
   color: var(--main-text-color);
 }
 
-h1 {
-  font-size: clamp(1.5rem, 3vw, 5rem);
-  margin: 0;
-}
-
 img {
   width: clamp(80px, 10vw, 300px);
   border-radius: 9999px;
+  box-shadow: 5px 5px 5px var(--main-text-color);
 }
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.5rem;
 }
 
