@@ -2,7 +2,7 @@
 
 <template>
   <Header />
-<p>contact</p>
+  <p>contact</p>
 </template>
 
 <style lang="css" scoped></style>

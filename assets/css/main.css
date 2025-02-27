@@ -44,6 +44,11 @@ h4 {
   margin: 0;
 }
 
+h5 {
+  font-size: clamp(1rem, 1.3vw, 2.2rem);
+  margin: 1rem 0 0 0;
+}
+
 hr {
   border: 1px var(--main-text-color) solid;
 }
@@ -66,4 +71,8 @@ hr {
   margin: 0;
   width: 100%;
   height: 100%;
+}
+
+.underline {
+  text-decoration: underline;
 }

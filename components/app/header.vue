@@ -16,7 +16,7 @@
       </div>
     </div>
   </header>
-  <hr>
+  <hr />
 </template>
 
 <style lang="css" scoped>
