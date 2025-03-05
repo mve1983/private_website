@@ -21,12 +21,13 @@ a:active {
 }
 
 body {
-  margin: 2vw;
+  margin: 2rem auto;
   padding: 0;
   background: var(--main-bg-color);
   color: var(--main-text-color);
   font-family: "Lucida Console", Courier, monospace;
   font-size: clamp(1rem, 1vw, 1.5rem);
+  width: clamp(22rem, 98vw, 1600px);
 }
 
 h1 {
@@ -51,6 +52,7 @@ h5 {
 
 hr {
   border: 1px var(--main-text-color) solid;
+  box-shadow: 0 0 5px var(--main-text-color);
 }
 
 .pdf-link {
@@ -76,3 +78,8 @@ hr {
 .underline {
   text-decoration: underline;
 }
+
+.no-scroll {
+  overflow: hidden;
+}
+

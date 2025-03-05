@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <Header />
+  <AppHeader />
   <p>about private</p>
 </template>
 

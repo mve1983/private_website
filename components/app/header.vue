@@ -41,7 +41,7 @@ button:active {
 img {
   width: clamp(80px, 10vw, 300px);
   border-radius: 9999px;
-  box-shadow: 5px 5px 5px var(--main-text-color);
+  box-shadow: 0 0 15px var(--main-text-color);
 }
 
 nav {

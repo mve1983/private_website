@@ -28,8 +28,8 @@
     genug Geld auf Seite geschafft hatte um ein privat finanziertes Web
     Development Bootcamp sowie einige Monate Verdienstausfall zu finanzieren.<br />
     Ich habe das Bootcamp erfolgreich abgeschlossen (siehe:
-    <strong><AppPdf name="Zertifikat" /></strong>) und arbeite nun seit Frühjahr
-    2022 als Entwickler.
+    <strong><AppPdf filename="Zertifikat" /></strong>) und arbeite nun seit
+    Frühjahr 2022 als Entwickler.
   </div>
 </template>
 

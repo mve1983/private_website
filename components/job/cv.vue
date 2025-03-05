@@ -3,61 +3,108 @@ import { skills, jobs, educations } from "~/data";
 </script>
 
 <template>
-  <fieldset class="cv-wrapper">
+  <fieldset>
     <legend><h4>CV</h4></legend>
-    <div class="fieldset-content">
-      <h5>Beruflicher Werdegang</h5>
-      <div v-for="job in jobs" class="list">
-        <div>
-          <div class="first-list-element underline">Arbeitgeber:</div>
-          <div class="underline">Stadt:</div>
-          <div class="underline">beschäftigt:</div>
-          <div class="underline">Bezeichnung:</div>
-          <div v-if="job.project" class="underline">Projekt:</div>
-          <div v-if="job.task" class="underline">Aufgabe:</div>
-          <div v-if="job.techstack" class="underline">Techstack:</div>
+    <div class="cv-wrapper">
+          <div class="fieldset-content">
+        <h5>Beruflicher Werdegang</h5>
+        <div v-for="job in jobs" class="list">
+          <div class="list-item first-list-element">
+            <div class="underline">Arbeitgeber:</div>
+            <div>{{ job.company }}</div>
+          </div>
+          <div class="list-item">
+            <div class="underline">Stadt:</div>
+            <div>{{ job.city }}</div>
+          </div>
+          <div class="list-item">
+            <div class="underline">beschäftigt:</div>
+            <div>{{ job.time }}</div>
+          </div>
+          <div class="list-item">
+            <div class="underline">Bezeichnung:</div>
+            <div>{{ job.jobname }}</div>
+          </div>
+          <div v-if="job.project" class="list-item">
+            <div class="underline">Projekt:</div>
+            <div>
+              <a :href="job.project" target="_blank" class="link">{{
+                job.project
+              }}</a>
+            </div>
+          </div>
+          <div v-if="job.task" class="list-item">
+            <div class="underline">Aufgabe:</div>
+            <div>{{ job.task }}</div>
+          </div>
+          <div v-if="job.techstack" class="list-item">
+            <div class="underline">Techstack:</div>
+            <div>{{ job.techstack }}</div>
+          </div>
+          <div v-if="job.certificateName" class="list-item">
+            <div class="underline">Zeugnis:</div>
+            <div>
+              <strong
+                ><AppPdf
+                  :filename="job.certificateName"
+                  alternativeName="Anzeigen/Download"
+              /></strong>
+            </div>
+          </div>
         </div>
         <div>
-          <div class="first-list-element">{{ job.company }}</div>
-          <div>{{ job.city }}</div>
-          <div>{{ job.time }}</div>
-          <div>{{ job.jobname }}</div>
-          <div v-if="job.project">
-            <a :href="job.project" target="_blank" class="link">{{
-              job.project
-            }}</a>
+          <h5>Bildungsweg</h5>
+          <div v-for="education in educations" class="list">
+            <div>
+              <div class="list-item first-list-element">
+                <div class="underline">Schule:</div>
+                <div>{{ education.school }}</div>
+              </div>
+              <div class="list-item">
+                <div class="underline">Stadt:</div>
+                <div>{{ education.city }}</div>
+              </div>
+              <div class="list-item">
+                <div class="underline">Dauer:</div>
+                <div>{{ education.time }}</div>
+              </div>
+              <div class="list-item">
+                <div class="underline">Kurs:</div>
+                <div>{{ education.course }}</div>
+              </div>
+              <div class="list-item">
+                <div class="underline">Bezeichnung:</div>
+                <div>{{ education.description }}</div>
+              </div>
+              <div v-if="education.certificateName" class="list-item">
+                <div class="underline">Zertifikat:</div>
+                <div>
+                  <strong
+                    ><AppPdf
+                      :filename="education.certificateName"
+                      alternativeName="Anzeigen/Download"
+                  /></strong>
+                </div>
+              </div>
+            </div>
           </div>
-          <div v-if="job.task">{{ job.task }}</div>
-          <div v-if="job.techstack">{{ job.techstack }}</div>
         </div>
       </div>
-      <h5>Bildungsweg</h5>
-      <div v-for="education in educations" class="list">
+      <div>
         <div>
-          <div class="first-list-element underline">Schule:</div>
-          <div class="underline">Stadt:</div>
-          <div class="underline">Dauer:</div>
-          <div class="underline">Kurs:</div>
-          <div class="underline">Bezeichnung:</div>
-        </div>
-        <div>
-          <div class="first-list-element">{{ education.school }}</div>
-          <div>{{ education.city }}</div>
-          <div>{{ education.time }}</div>
-          <div>{{ education.course }}</div>
-          <div>{{ education.description }}</div>
+          <h5>Fähigkeiten</h5>
+          <p
+            v-for="(skill, index) in skills"
+            :class="index === 0 ? 'first-list-element' : ''">
+            {{ skill }}
+          </p>
         </div>
       </div>
     </div>
-    <div>
-      <div>
-        <h5>Fähigkeiten</h5>
-        <p
-          v-for="(skill, index) in skills"
-          :class="index === 0 ? 'first-list-element' : ''">
-          {{ skill }}
-        </p>
-      </div>
+    <div class="download-cv">
+      <strong
+        ><AppPdf filename="cv" alternativeName="als pdf anzeigen/downloaden"
+      /></strong>
     </div>
   </fieldset>
 </template>
@@ -65,7 +112,7 @@ import { skills, jobs, educations } from "~/data";
 <style lang="css" scoped>
 fieldset {
   border: 1px var(--main-text-color) solid;
-  box-shadow: 5px 5px 5px var(--main-text-color);
+  box-shadow: 0 0 15px var(--main-text-color);
 }
 
 .cv-wrapper {
@@ -79,12 +126,13 @@ fieldset {
 }
 
 .list {
-  display: grid;
-  grid-template-columns: clamp(8rem, 10vw, 16rem) 1fr;
+  display: flex;
+  flex-direction: column;
 }
 
-.list > div > div {
-  padding: 0.1rem 0;
+.list-item {
+  display: flex;
+  flex-direction: column;
 }
 
 .first-list-element {
@@ -95,9 +143,18 @@ fieldset {
   padding-bottom: 1rem;
 }
 
+.download-cv {
+  margin-top: 2rem;
+}
+
 @media only screen and (min-width: 600px) {
   .cv-wrapper {
     flex-direction: row;
+  }
+
+  .list-item {
+    display: grid;
+    grid-template-columns: clamp(8rem, 10vw, 16rem) 1fr;
   }
 }
 </style>

@@ -4,13 +4,12 @@ import { files } from "~/data";
 let dialogCloseEventListener: any = null;
 
 const props = defineProps<{
-  name: string;
+  filename: string;
+  alternativeName?: string;
 }>();
 
-function openPdf(e: Event) {
-  const input = e.target as HTMLElement;
-  if (!input.textContent) return null;
-  const path = findMatchingPdfPath(input.textContent.toLowerCase());
+function openPdf() {
+  const path = findMatchingPdfPath(props.filename.toLowerCase());
   if (!path) return null;
 
   if (isSmallDisplay()) {
@@ -18,7 +17,7 @@ function openPdf(e: Event) {
     a.setAttribute("href", path);
     a.setAttribute(
       "download",
-      `${input.textContent.toLowerCase()}_ManuelVerweyen.pdf`
+      `${props.filename.toLowerCase()}_ManuelVerweyen.pdf`
     );
     a.style.display = "none";
     document.body.appendChild(a);
@@ -34,6 +33,8 @@ function openPdf(e: Event) {
     pdfFrame.src = path;
     pdfFrame.classList.add("pdf-frame");
     pdfFrameWrapper?.appendChild(pdfFrame);
+
+    document.body.classList.add("no-scroll")
   }
 }
 
@@ -48,6 +49,7 @@ function closePdf() {
   const oldPdf = document.getElementById("pdfFrame");
   oldPdf && oldPdf.remove();
   dialog?.close();
+  document.body.classList.remove("no-scroll")
 }
 
 onMounted(() => {
@@ -73,8 +75,8 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <span class="pdf-link" @click="openPdf($event)" tabindex="0" role="link">{{
-    name
+  <span class="pdf-link" @click="openPdf()" tabindex="0" role="link">{{
+    alternativeName ? alternativeName : filename
   }}</span>
   <dialog>
     <div class="pdf-frame-wrapper"></div>

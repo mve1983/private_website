@@ -2,6 +2,7 @@ export const files = {
   zertifikat: "/docs/bootcamp.pdf",
   aeb: "/docs/aeb.pdf",
   sapiens: "/docs/sapiens.pdf",
+  cv: "/docs/cv.pdf",
 };
 
 export const skills = [
@@ -33,6 +34,7 @@ export const jobs = [
     task: "Entwicklung neuer Features und Wartung sowie insbesondere verantwortlich für die Migration von Nuxt2/Vue2 auf Nuxt3/Vue3",
     techstack:
       "Nuxt/Vue, Typescript, HTML, CSS/SCSS, GraphQL, Kubernetes, Docker, Git, Gitlab",
+    certificateName: "sapiens",
   },
   {
     company: "AEB SE",
@@ -44,6 +46,7 @@ export const jobs = [
     task: "Entwicklung von Microapps zur Einbindung in die nXt Platform",
     techstack:
       "Angular, Typescript, HTML, CSS, GraphQL, Kubernetes, Docker, Git, Gitlab, BPMN",
+    certificateName: "aeb",
   },
   {
     company: "Diverse",
@@ -53,6 +56,7 @@ export const jobs = [
     project: null,
     task: "Arbeiten bei verschiedenen Speditionen, Reedereien und Hafenumschlagbetrieben in meinem ursprünglichen Ausbildungsberuf. Details gerne auf Anfrage.",
     techstack: null,
+    certificateName: null,
   },
 ];
 
@@ -63,6 +67,7 @@ export const educations = [
     course: "WebDevelopment Bootcamp Certificate",
     time: "November 2021 – Februar 2022",
     description: "Selbst finanziertes Bootcamp",
+    certificateName: "zertifikat",
   },
   {
     school: "Berufskolleg am Wasserturm",
@@ -71,5 +76,6 @@ export const educations = [
     time: "August 2000 – Januar 2003",
     description:
       "Ausbildung zum Speditionskaufmann (Arbeitgeber Fiege Deutschland GmbH & Co. KG, Bocholt)",
+    certificateName: null,
   },
 ];

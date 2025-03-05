@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <Header />
+  <AppHeader />
   <p>code</p>
 </template>
 
