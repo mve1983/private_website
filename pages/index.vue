@@ -1,8 +1,13 @@
 <script setup lang="ts"></script>
 
 <template>
-  <AppHeader />
-  <AppWelcome />
+  <div class="page-wrapper">
+    <AppHeader />
+    <main>
+      <AppWelcome />
+    </main>
+    <AppFooter />
+  </div>
 </template>
 
 <style lang="css" scoped></style>

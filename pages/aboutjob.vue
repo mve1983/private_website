@@ -1,16 +1,21 @@
 <script setup lang="ts"></script>
 
 <template>
-  <AppHeader />
-  <h3>Berufliches</h3>
-  <section>
-    <article>
-      <JobIntroduction />
-    </article>
-    <article>
-      <JobCv />
-    </article>
-  </section>
+  <div class="page-wrapper">
+    <AppHeader />
+    <main>
+      <h3>Berufliches</h3>
+      <section>
+        <article>
+          <JobIntroduction />
+        </article>
+        <article>
+          <JobCv />
+        </article>
+      </section>
+    </main>
+    <AppFooter />
+  </div>
 </template>
 
 <style lang="css" scoped>

@@ -90,8 +90,8 @@ dialog {
   border-radius: 0.3rem;
   margin: auto;
   padding: 0;
-  width: 90vw;
-  height: 90vh;
+  width: 80vw;
+  height: 80vh;
 }
 
 dialog::backdrop {
