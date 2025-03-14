@@ -7,16 +7,23 @@
       <div class="headline-nav">
         <h1>Manuel Verweyen</h1>
         <nav>
-          <NuxtLink to="/"><button>Home</button></NuxtLink>
-          <NuxtLink to="/aboutjob"><button>Berufliches</button></NuxtLink>
-          <NuxtLink to="/quiz"><button>Quiz</button></NuxtLink>
-          <NuxtLink to="/aboutprivate"><button>Privates</button></NuxtLink>
-          <NuxtLink to="/contact"><button>Kontakt</button></NuxtLink>
+          <NuxtLink to="/" activeClass="active"><button>Home</button></NuxtLink>
+          <NuxtLink to="/aboutjob" activeClass="active"
+            ><button>Berufliches</button></NuxtLink
+          >
+          <NuxtLink to="/quiz" activeClass="active"
+            ><button>Quiz</button></NuxtLink
+          >
+          <NuxtLink to="/aboutprivate" activeClass="active"
+            ><button>Privates</button></NuxtLink
+          >
+          <NuxtLink to="/contact" activeClass="active"
+            ><button>Kontakt</button></NuxtLink
+          >
         </nav>
       </div>
     </div>
   </header>
-  <hr />
 </template>
 
 <style lang="css" scoped>
@@ -30,6 +37,12 @@ nav {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
+}
+
+.active > button {
+  border: 0.1rem var(--main-text-color) solid;
+  background-color: var(--main-bg-color);
+  color: var(--main-text-color);
 }
 
 .headline-nav {

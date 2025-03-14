@@ -8,9 +8,14 @@ export type QuizStore = {
   quizApiKey: string | undefined;
   alreadPlayedQuestionIDs: number[];
   currentPoints: number;
-  lastApiCall: number;
   currentCategoryId: number;
+  currentCategoryName: string;
   currentDifficulty: string;
+  currentQuestion: {
+    question: string;
+    correctAnswer: string;
+    allAnswers: string[];
+  } | null;
 };
 
 export type QuizCategory = {
@@ -20,4 +25,18 @@ export type QuizCategory = {
 
 export type QuizCategories = {
   trivia_categories: QuizCategory[];
+};
+
+export type ApiQuestionResponse = {
+  response_code: number;
+  results: [
+    {
+      type: string;
+      difficulty: string;
+      category: string;
+      question: string;
+      correct_answer: string;
+      incorrect_answers: string[];
+    }
+  ];
 };

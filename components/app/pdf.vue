@@ -34,7 +34,7 @@ function openPdf() {
     pdfFrame.classList.add("pdf-frame");
     pdfFrameWrapper?.appendChild(pdfFrame);
 
-    document.body.classList.add("no-scroll")
+    document.body.classList.add("no-scroll");
   }
 }
 
@@ -49,7 +49,7 @@ function closePdf() {
   const oldPdf = document.getElementById("pdfFrame");
   oldPdf && oldPdf.remove();
   dialog?.close();
-  document.body.classList.remove("no-scroll")
+  document.body.classList.remove("no-scroll");
 }
 
 onMounted(() => {

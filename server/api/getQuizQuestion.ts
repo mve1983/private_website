@@ -5,7 +5,5 @@ export default defineEventHandler(async (event) => {
     `https://opentdb.com/api.php?amount=1&category=${body.currentCategoryId}&difficulty=${body.currentDifficulty}&type=multiple`
   );
 
-  console.log(data);
-
   return data;
 });

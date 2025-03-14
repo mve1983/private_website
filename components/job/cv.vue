@@ -6,7 +6,7 @@ import { skills, jobs, educations } from "~/data";
   <fieldset>
     <legend><h4>CV</h4></legend>
     <div class="cv-wrapper">
-          <div class="fieldset-content">
+      <div class="fieldset-content">
         <h5>Beruflicher Werdegang</h5>
         <div v-for="job in jobs" class="list">
           <div class="list-item first-list-element">
@@ -112,6 +112,7 @@ import { skills, jobs, educations } from "~/data";
 <style lang="css" scoped>
 fieldset {
   border: 1px var(--main-text-color) solid;
+  border-radius: 0.3rem;
   box-shadow: 0 0 15px var(--main-text-color);
 }
 

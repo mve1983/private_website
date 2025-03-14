@@ -71,9 +71,16 @@ h5 {
   margin: 1rem 0 0 0;
 }
 
-hr {
-  border: 1px var(--main-text-color) solid;
-  box-shadow: 0 0 5px var(--main-text-color);
+header {
+  background-color: var(--main-bg-color);
+  position: fixed;
+  width: clamp(22rem, 98vw, 1600px);
+  height: 9rem;
+  top: 0;
+  padding: 1rem 2rem;
+  border-bottom: 2px var(--main-text-color) solid;
+  box-shadow: 0px 3px 15px var(--main-text-color);
+  z-index: 100;
 }
 
 main {
@@ -85,6 +92,7 @@ main {
   flex-direction: column;
   padding: 2rem;
   min-height: 100vh;
+  margin-top: 6rem;
 }
 
 .pdf-link {
@@ -114,3 +122,68 @@ main {
 .no-scroll {
   overflow: hidden;
 }
+
+@media only screen and (min-width: 400px) {
+  header {
+    height: 8rem;
+  }
+  .page-wrapper {
+    margin-top: 6rem;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  header {
+    height: clamp(7.5rem, 8rem, 10rem);
+  }
+  .page-wrapper {
+    margin-top: 7rem;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  header {
+    height: clamp(9rem, 10rem, 12rem);
+  }
+  .page-wrapper {
+    margin-top: 9rem;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  header {
+    height: clamp(10rem, 12rem, 14rem);
+  }
+  .page-wrapper {
+    margin-top: 11rem;
+  }
+}
+
+@media only screen and (min-width: 1700px) {
+  header {
+    height: clamp(12rem, 15rem, 17rem);
+  }
+  .page-wrapper {
+    margin-top: 14rem;
+  }
+}
+
+@media only screen and (min-width: 2000px) {
+  header {
+    height: clamp(14rem, 17rem, 20rem);
+  }
+  .page-wrapper {
+    margin-top: 16rem;
+  }
+}
+
+@media only screen and (min-width: 2300px) {
+  header {
+    height: clamp(16rem, 21rem, 22rem);
+  }
+  .page-wrapper {
+    margin-top: 20rem;
+  }
+}
+
+

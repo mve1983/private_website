@@ -1,8 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
+  <AppHeader />
   <div class="page-wrapper">
-    <AppHeader />
     <main>
       <p>contact</p>
     </main>
